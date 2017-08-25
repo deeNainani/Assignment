@@ -1,0 +1,13 @@
+.Details {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+input[type="text"] {
+    width: 150px;
+}
+
+tr>td {
+  padding-bottom: 2em;
+}
