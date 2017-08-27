@@ -3,4 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './js/App';
 import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <App url="http://localhost:3001/api/Info" pollInterval={2000} />,
+  document.getElementById('root')
+);

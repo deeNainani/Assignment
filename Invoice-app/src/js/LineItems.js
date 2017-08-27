@@ -25,9 +25,9 @@ class LineItems extends Component {
 
   render() {
     return (
-      <div>
-        <label className="description"> Description </label>
-        <label className="amount"> Amount </label>
+      <div className="line-items">
+        <span className="description"> Description </span>
+        <span className="amount"> Amount </span>
         {this.renderLineItem()}
         <button className="add" onClick={this.props.addLineItem}>
           +

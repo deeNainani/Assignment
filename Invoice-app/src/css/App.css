@@ -16,3 +16,17 @@
 .App-intro {
   font-size: large;
 }
+
+#send {
+	margin-bottom: 20px;
+	margin-left: 500px;
+	margin-top: 30px;
+	width:8%;
+	padding: 5px;
+	border-radius:5px;
+	border:1px solid #7ac9b7;
+	background-color: #4180C5;
+	color: aliceblue;
+	font-size:15px;
+	cursor:pointer;
+}

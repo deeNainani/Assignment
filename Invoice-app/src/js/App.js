@@ -4,18 +4,19 @@ import '../css/App.css';
 import Details from './Details';
 import LineItems from './LineItems';
 import Total from './Total';
+import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Name: null,
-      Email: null,
-      DueDate: null,
+      Name: '',
+      Email: '',
+      DueDate: '',
       lineItemList: [
         {
-          description: null,
-          amount: null,
+          description: '',
+          amount: '',
         },
       ],
     };
@@ -53,6 +54,27 @@ class App extends Component {
     return count.toString();
   }
 
+  handleSubmit = info => {
+    axios
+      .post(this.props.url, info)
+      .then(res => {
+        this.setState({
+          Name: '',
+          Email: '',
+          DueDate: '',
+          lineItemList: [
+            {
+              description: '',
+              amount: '',
+            },
+          ],
+        });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
   render() {
     console.log(this.state);
     const total = this.calculateTotal();
@@ -62,13 +84,21 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Ready to send an invoice</h2>
         </div>
-        <Details updDet={this.updateDetails} />
+        <Details
+          updDet={this.updateDetails}
+          name={this.state.Name}
+          email={this.state.Email}
+          dueDate={this.state.DueDate}
+        />
         <LineItems
           lineItemList={this.state.lineItemList}
           addLineItem={this.addLineItem}
           updLine={this.updateLineItem}
         />
         <Total total={total} />
+        <button id="send" onClick={() => this.handleSubmit(this.state)}>
+          Send
+        </button>
       </div>
     );
   }

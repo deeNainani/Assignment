@@ -1,13 +1,43 @@
-.Details {
-  margin-left: auto;
-  margin-right: auto;
+.details {
   margin-top: 50px;
+  margin-left: 1px;
 }
 
-input[type="text"] {
-    width: 150px;
+#name {
+	margin-right: 50px;
 }
 
-tr>td {
-  padding-bottom: 2em;
+#email {
+	margin-right: 50px;
+}
+
+.dueDate {
+	margin-right: 30px;
+}
+
+.details input[type="text"] {
+	margin-bottom: 20px;
+	margin-top: 10px;
+	width:20%;
+	padding: 5px;
+	border-radius:5px;
+	border:1px solid #7ac9b7;
+}
+
+.details input[type="email"] {
+	margin-bottom: 20px;
+	margin-top: 10px;
+	width:20%;
+	padding: 5px;
+	border-radius:5px;
+	border:1px solid #7ac9b7;
+}
+
+.details input[type="date"] {
+	margin-bottom: 20px;
+	margin-top: 10px;
+	width:20%;
+	padding: 5px;
+	border-radius:5px;
+	border:1px solid #7ac9b7;
 }

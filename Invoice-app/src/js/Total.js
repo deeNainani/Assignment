@@ -8,10 +8,10 @@ class Total extends Component {
 
   render() {
     return (
-      <div>
-        <label> Total </label>
+      <div className="total">
+        <label> TOTAL </label>
         <label>
-          {this.props.total}{' '}
+          ${this.props.total}{' '}
         </label>
       </div>
     );
