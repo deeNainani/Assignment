@@ -7,6 +7,12 @@ import LineItems from './LineItems';
 import Total from './Total';
 import axios from 'axios';
 
+/*
+  App component is the main component of the application which internally renders the following components:
+  1. Details
+  2. LineItems
+  3. Total
+*/
 class App extends Component {
   //Defines the initial state where in all the fields are set to empty string initially
   constructor(props) {
@@ -83,6 +89,7 @@ class App extends Component {
       });
   };
 
+  //Renders the main application
   render() {
     console.log(this.state);
     const total = this.calculateTotal();

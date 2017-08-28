@@ -9,6 +9,7 @@ class Details extends Component {
     dueDate: React.PropTypes.string,
   };
 
+  //Renders the information details that needs to be entered by the user.
   render() {
     return (
       <div className="details">
@@ -18,7 +19,7 @@ class Details extends Component {
             type="text"
             name="Name"
             onChange={event => this.props.updDet(event)}
-            placeholder="Jon Snow"
+            placeholder="Name of customer"
             value={this.props.name}
           />
         </div>

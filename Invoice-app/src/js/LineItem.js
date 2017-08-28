@@ -7,6 +7,7 @@ class LineItem extends Component {
     amount: React.PropTypes.string.isRequired,
   };
 
+  //Renders the individual line item, specifically the description text field and the amount field.
   render() {
     return (
       <div className="container">

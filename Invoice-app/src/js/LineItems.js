@@ -9,6 +9,7 @@ class LineItems extends Component {
     updLine: React.PropTypes.func,
   };
 
+  //Renders the line Item with description and amount field
   renderLineItem = () => {
     const update = this.props.updLine;
     return this.props.lineItemList.map((lineItem, index) => {
@@ -23,6 +24,7 @@ class LineItems extends Component {
     });
   };
 
+  //renders the Description and amount label and also the + button which is used for adding the lineItem.
   render() {
     return (
       <div className="line-items">

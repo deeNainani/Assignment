@@ -6,6 +6,7 @@ class Total extends Component {
     total: React.PropTypes.string,
   };
 
+  //Renders the Total read only field which displays the total corresponding to the line items.
   render() {
     return (
       <div className="container-fluid">
