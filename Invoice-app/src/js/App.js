@@ -1,3 +1,4 @@
+//importing the required dependency.
 import React, { Component } from 'react';
 import logo from '../bn-logo.png';
 import '../css/App.css';
@@ -7,6 +8,7 @@ import Total from './Total';
 import axios from 'axios';
 
 class App extends Component {
+  //Defines the initial state where in all the fields are set to empty string initially
   constructor(props) {
     super(props);
     this.state = {
@@ -22,6 +24,7 @@ class App extends Component {
     };
   }
 
+  //adds a new line item, when the + button is clicked.
   addLineItem = () => {
     let newlineItemList = this.state.lineItemList;
     newlineItemList.push({ description: null, amount: null });
@@ -30,6 +33,7 @@ class App extends Component {
     });
   };
 
+  //Updates the state whenever the description and amount for a particular line item are updated.
   updateLineItem = (event, index) => {
     const { name, value } = event.target;
     let newlineItemList = this.state.lineItemList;
@@ -39,12 +43,14 @@ class App extends Component {
     });
   };
 
+  //updates the state whenever the name, email or dueDate is updated.
   updateDetails = event => {
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
 
+  //Calculates the total by iterating through the amount corresponding to each line item
   calculateTotal() {
     const len = this.state.lineItemList.length;
     let count = 0;
@@ -54,6 +60,8 @@ class App extends Component {
     return count.toString();
   }
 
+  //does a post call with the latest state that the component comprises off.
+  //All the Properties of the state object are set to empty string on successful completion of the post call.
   handleSubmit = info => {
     axios
       .post(this.props.url, info)
@@ -96,9 +104,19 @@ class App extends Component {
           updLine={this.updateLineItem}
         />
         <Total total={total} />
-        <button id="send" onClick={() => this.handleSubmit(this.state)}>
-          Send
-        </button>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-sm-offset-6 col-sm-6">
+              <button
+                className="btn btn-primary btn-xl"
+                type="button"
+                onClick={() => this.handleSubmit(this.state)}
+              >
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

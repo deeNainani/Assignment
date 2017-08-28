@@ -9,22 +9,26 @@ class LineItem extends Component {
 
   render() {
     return (
-      <div>
-        <div className="desc-box">
-          <input
-            type="text"
-            name="description"
-            value={this.props.description}
-            onChange={event => this.props.updLine(event, this.props.index)}
-          />
-        </div>
-        <div className="amount-box">
-          <input
-            type="number"
-            name="amount"
-            value={this.props.amount}
-            onChange={event => this.props.updLine(event, this.props.index)}
-          />
+      <div className="container">
+        <div className="row no-gutters">
+          <div className="col-xs-offset-4 col-xs-4">
+            <input
+              type="text"
+              name="description"
+              value={this.props.description}
+              onChange={event => this.props.updLine(event, this.props.index)}
+              placeholder="description of line item"
+            />
+          </div>
+          <div className="col-xs-2">
+            <input
+              type="number"
+              name="amount"
+              value={this.props.amount}
+              onChange={event => this.props.updLine(event, this.props.index)}
+              placeholder="$ 0.00"
+            />
+          </div>
         </div>
       </div>
     );

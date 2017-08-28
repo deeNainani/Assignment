@@ -17,16 +17,10 @@
   font-size: large;
 }
 
-#send {
-	margin-bottom: 20px;
-	margin-left: 500px;
-	margin-top: 30px;
-	width:8%;
-	padding: 5px;
-	border-radius:5px;
-	border:1px solid #7ac9b7;
-	background-color: #4180C5;
-	color: aliceblue;
-	font-size:15px;
-	cursor:pointer;
+.btn-xl {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width:20%;
+    margin-top: 20px;
 }

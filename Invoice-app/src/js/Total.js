@@ -8,11 +8,14 @@ class Total extends Component {
 
   render() {
     return (
-      <div className="total">
-        <label> TOTAL </label>
-        <label>
-          ${this.props.total}{' '}
-        </label>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm-offset-6 col-sm-6">
+            <div className="total">
+              TOTAL $ {this.props.total}{' '}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

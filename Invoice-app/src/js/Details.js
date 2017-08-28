@@ -18,6 +18,7 @@ class Details extends Component {
             type="text"
             name="Name"
             onChange={event => this.props.updDet(event)}
+            placeholder="Jon Snow"
             value={this.props.name}
           />
         </div>
@@ -27,6 +28,7 @@ class Details extends Component {
             type="email"
             name="Email"
             onChange={event => this.props.updDet(event)}
+            placeholder="yourName@gmail.com"
             value={this.props.email}
           />
         </div>

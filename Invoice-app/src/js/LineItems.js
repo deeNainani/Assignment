@@ -26,12 +26,24 @@ class LineItems extends Component {
   render() {
     return (
       <div className="line-items">
-        <span className="description"> Description </span>
-        <span className="amount"> Amount </span>
-        {this.renderLineItem()}
-        <button className="add" onClick={this.props.addLineItem}>
-          +
-        </button>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-offset-3 col-xs-3">Description</div>
+            <div className="col-xs-6">Amount</div>
+          </div>
+          {this.renderLineItem()}
+          <div className="row">
+            <div className="col-sm-offset-2 col-sm-5">
+              <button
+                className="btn btn-primary btn-xs"
+                type="button"
+                onClick={this.props.addLineItem}
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
